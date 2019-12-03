@@ -21,7 +21,7 @@
       <b-button type="submit"
                 variant="primary"
                 class="ld-ext-right"
-                v-bind:class="{ running: loading }"    
+                v-bind:class="{ running: loading }"
                 :disabled="isValid">
                 Login <div class="ld ld-ring ld-spin"></div>
       </b-button>
@@ -30,19 +30,20 @@
 </template>
 
 <script>
-import {mapState, mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'login-form',
-  data(){
+  data () {
     return {
-      userId: '',
+      userId: ''
     }
   },
   computed: {
-    isValid: function(){
-      const result = this.userId.length < 3;
-      return result ? result : this.loading
+    isValid: function () {
+      const result = this.userId.length < 3
+      // return result ? result : this.loading
+      return (result || this.loading)
     },
     ...mapState([
       'loading',

@@ -25,11 +25,11 @@ export default new Vuex.Store({
     messages: [],
     userTyping: null
   },
-  mutations: {
-  },
+  mutations,
   actions,
   getters: {
-    hasError: state => state.error ? true : false
+    // hasError: state => state.error ? true : false
+    hasError: state => state.error
   },
   plugins: [vuexLocal.plugin],
   strict: debug
